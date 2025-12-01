@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>33</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_E">
@@ -48,7 +48,7 @@
    </widget>
    <widget class="QMenu" name="menuWaveform_Analysis">
     <property name="title">
-     <string>Waveform Analysis</string>
+     <string>波形分析(I)</string>
     </property>
     <addaction name="actionSine_Wave"/>
     <addaction name="actionTriangle_Wave"/>
@@ -173,17 +173,17 @@
   </action>
   <action name="actionSine_Wave">
    <property name="text">
-    <string>Sine Wave</string>
+    <string>正弦波</string>
    </property>
   </action>
   <action name="actionTriangle_Wave">
    <property name="text">
-    <string>Triangle Wave</string>
+    <string>三角波</string>
    </property>
   </action>
   <action name="actionSquare_Wave">
    <property name="text">
-    <string>Square Wave</string>
+    <string>方波</string>
    </property>
   </action>
  </widget>

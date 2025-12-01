@@ -13,7 +13,7 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;  // ← 這裡不是 public 繼承，而是 pointer
+    Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H

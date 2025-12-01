@@ -12,8 +12,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void toggleTheme();
+
 private:
     Ui::MainWindow *ui;
+    bool isDarkTheme;
+    void applyTheme(bool dark);
 };
 
 #endif // MAINWINDOW_H

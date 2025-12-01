@@ -46,8 +46,17 @@
     <addaction name="action_C_2"/>
     <addaction name="action_V"/>
    </widget>
+   <widget class="QMenu" name="menuWaveform_Analysis">
+    <property name="title">
+     <string>Waveform Analysis</string>
+    </property>
+    <addaction name="actionSine_Wave"/>
+    <addaction name="actionTriangle_Wave"/>
+    <addaction name="actionSquare_Wave"/>
+   </widget>
    <addaction name="menu_E"/>
    <addaction name="menu_E_2"/>
+   <addaction name="menuWaveform_Analysis"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -160,6 +169,21 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionSine_Wave">
+   <property name="text">
+    <string>Sine Wave</string>
+   </property>
+  </action>
+  <action name="actionTriangle_Wave">
+   <property name="text">
+    <string>Triangle Wave</string>
+   </property>
+  </action>
+  <action name="actionSquare_Wave">
+   <property name="text">
+    <string>Square Wave</string>
    </property>
   </action>
  </widget>

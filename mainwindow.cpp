@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QPushButton>
-#include <QToolBar>
+#include <QMenuBar>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -10,10 +10,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     
-    // Create theme toggle button
+    // Create theme toggle button and place it next to 'Waveform Analysis' menu
     QPushButton *themeButton = new QPushButton("Switch Theme", this);
     themeButton->setObjectName("themeButton");
-    ui->toolBar->addWidget(themeButton);
+    ui->menubar->setCornerWidget(themeButton, Qt::TopRightCorner);
     
     connect(themeButton, &QPushButton::clicked, this, &MainWindow::toggleTheme);
     

@@ -23,8 +23,112 @@
      <height>33</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_E">
+    <property name="title">
+     <string>檔案(E)</string>
+    </property>
+    <addaction name="action_N"/>
+    <addaction name="action_O"/>
+    <addaction name="action_C"/>
+    <addaction name="separator"/>
+    <addaction name="action_S"/>
+    <addaction name="action_A"/>
+    <addaction name="separator"/>
+    <addaction name="action_X"/>
+   </widget>
+   <widget class="QMenu" name="menu_E_2">
+    <property name="title">
+     <string>編輯(E)</string>
+    </property>
+    <addaction name="action_U"/>
+    <addaction name="action_T"/>
+    <addaction name="action_A_2"/>
+    <addaction name="action_C_2"/>
+    <addaction name="action_V"/>
+   </widget>
+   <addaction name="menu_E"/>
+   <addaction name="menu_E_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_N">
+   <property name="text">
+    <string>新增(N)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_O">
+   <property name="text">
+    <string>開啟(O)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_C">
+   <property name="text">
+    <string>關閉(C)</string>
+   </property>
+  </action>
+  <action name="action_S">
+   <property name="text">
+    <string>儲存(S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_A">
+   <property name="text">
+    <string>另存(A)</string>
+   </property>
+  </action>
+  <action name="action_X">
+   <property name="text">
+    <string>退出(X)</string>
+   </property>
+  </action>
+  <action name="action_U">
+   <property name="text">
+    <string>還原(U)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_T">
+   <property name="text">
+    <string>剪下(T)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="action_C_2">
+   <property name="text">
+    <string>複製(C)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action_A_2">
+   <property name="text">
+    <string>全選(A)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="action_V">
+   <property name="text">
+    <string>貼上(V)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

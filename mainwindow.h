@@ -21,6 +21,7 @@ private:
     Ui::MainWindow *ui;
     bool isDarkTheme;
     void applyTheme(bool dark);
+    static const QString FILE_FILTER;
 };
 
 #endif // MAINWINDOW_H

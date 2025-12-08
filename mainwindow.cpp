@@ -6,6 +6,8 @@
 #include <QMessageBox>
 #include <QTextStream>
 
+const QString MainWindow::FILE_FILTER = "Text Files (*.txt);;All Files (*)";
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::MainWindow),
@@ -95,7 +97,7 @@ void MainWindow::applyTheme(bool dark)
 void MainWindow::openFile()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
-        tr("Open File"), "", tr("Text Files (*.txt);;All Files (*)"));
+        tr("Open File"), "", FILE_FILTER);
     
     if (!fileName.isEmpty()) {
         QFile file(fileName);
@@ -113,7 +115,7 @@ void MainWindow::openFile()
 void MainWindow::saveFile()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-        tr("Save File"), "", tr("Text Files (*.txt);;All Files (*)"));
+        tr("Save File"), "", FILE_FILTER);
     
     if (!fileName.isEmpty()) {
         QFile file(fileName);

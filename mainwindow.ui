@@ -93,6 +93,10 @@
    <addaction name="action_V"/>
   </widget>
   <action name="action_N">
+   <property name="icon">
+    <iconset resource="images/designwindow.qrc">
+     <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
+   </property>
    <property name="text">
     <string>新增(N)</string>
    </property>
@@ -101,6 +105,10 @@
    </property>
   </action>
   <action name="action_O">
+   <property name="icon">
+    <iconset resource="images/designwindow.qrc">
+     <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
+   </property>
    <property name="text">
     <string>開啟(O)</string>
    </property>
@@ -114,6 +122,10 @@
    </property>
   </action>
   <action name="action_S">
+   <property name="icon">
+    <iconset resource="images/designwindow.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
    <property name="text">
     <string>儲存(S)</string>
    </property>
@@ -132,6 +144,10 @@
    </property>
   </action>
   <action name="action_U">
+   <property name="icon">
+    <iconset resource="images/designwindow.qrc">
+     <normaloff>:/images/undo.png</normaloff>:/images/undo.png</iconset>
+   </property>
    <property name="text">
     <string>還原(U)</string>
    </property>
@@ -140,6 +156,10 @@
    </property>
   </action>
   <action name="action_T">
+   <property name="icon">
+    <iconset resource="images/designwindow.qrc">
+     <normaloff>:/images/cut.png</normaloff>:/images/cut.png</iconset>
+   </property>
    <property name="text">
     <string>剪下(T)</string>
    </property>
@@ -148,6 +168,10 @@
    </property>
   </action>
   <action name="action_C_2">
+   <property name="icon">
+    <iconset resource="images/designwindow.qrc">
+     <normaloff>:/images/copy.png</normaloff>:/images/copy.png</iconset>
+   </property>
    <property name="text">
     <string>複製(C)</string>
    </property>
@@ -164,6 +188,10 @@
    </property>
   </action>
   <action name="action_V">
+   <property name="icon">
+    <iconset resource="images/designwindow.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
    <property name="text">
     <string>貼上(V)</string>
    </property>
@@ -187,6 +215,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="images/designwindow.qrc"/>
+ </resources>
  <connections/>
 </ui>

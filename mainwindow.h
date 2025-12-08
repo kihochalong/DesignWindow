@@ -14,6 +14,8 @@ public:
 
 private slots:
     void toggleTheme();
+    void openFile();
+    void saveFile();
 
 private:
     Ui::MainWindow *ui;

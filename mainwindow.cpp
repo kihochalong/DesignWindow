@@ -2,6 +2,9 @@
 #include <QApplication>
 #include <QPushButton>
 #include <QMenuBar>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -16,6 +19,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->menubar->setCornerWidget(themeButton, Qt::TopRightCorner);
     
     connect(themeButton, &QPushButton::clicked, this, &MainWindow::toggleTheme);
+    
+    // Connect Open and Save actions
+    connect(ui->action_O, &QAction::triggered, this, &MainWindow::openFile);
+    connect(ui->action_S, &QAction::triggered, this, &MainWindow::saveFile);
     
     // Apply initial dark theme
     applyTheme(isDarkTheme);
@@ -56,7 +63,8 @@ void MainWindow::applyTheme(bool dark)
             "QWidget { background-color: #1a1a1a; color: #ffffff; }"
             "QPushButton { background-color: #404040; color: #ffffff; padding: 5px 15px; border: 1px solid #505050; border-radius: 3px; }"
             "QPushButton:hover { background-color: #505050; }"
-            "QPushButton:pressed { background-color: #606060; }";
+            "QPushButton:pressed { background-color: #606060; }"
+            "QTextEdit { background-color: #2d2d2d; color: #ffffff; border: 1px solid #404040; }";
     } else {
         // Light theme with white background
         styleSheet = 
@@ -77,8 +85,45 @@ void MainWindow::applyTheme(bool dark)
             "QWidget { background-color: #ffffff; color: #000000; }"
             "QPushButton { background-color: #e0e0e0; color: #000000; padding: 5px 15px; border: 1px solid #c0c0c0; border-radius: 3px; }"
             "QPushButton:hover { background-color: #d0d0d0; }"
-            "QPushButton:pressed { background-color: #c0c0c0; }";
+            "QPushButton:pressed { background-color: #c0c0c0; }"
+            "QTextEdit { background-color: #ffffff; color: #000000; border: 1px solid #c0c0c0; }";
     }
     
     qApp->setStyleSheet(styleSheet);
+}
+
+void MainWindow::openFile()
+{
+    QString fileName = QFileDialog::getOpenFileName(this,
+        tr("Open File"), "", tr("Text Files (*.txt);;All Files (*)"));
+    
+    if (!fileName.isEmpty()) {
+        QFile file(fileName);
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&file);
+            ui->textEdit->setPlainText(in.readAll());
+            file.close();
+        } else {
+            QMessageBox::warning(this, tr("Error"), 
+                tr("Could not open file for reading."));
+        }
+    }
+}
+
+void MainWindow::saveFile()
+{
+    QString fileName = QFileDialog::getSaveFileName(this,
+        tr("Save File"), "", tr("Text Files (*.txt);;All Files (*)"));
+    
+    if (!fileName.isEmpty()) {
+        QFile file(fileName);
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            QTextStream out(&file);
+            out << ui->textEdit->toPlainText();
+            file.close();
+        } else {
+            QMessageBox::warning(this, tr("Error"), 
+                tr("Could not open file for writing."));
+        }
+    }
 }
